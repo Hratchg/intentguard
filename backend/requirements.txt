@@ -1,8 +1,8 @@
-fastapi==0.115.6
-uvicorn[standard]==0.34.0
-aiosqlite==0.20.0
-scikit-learn==1.6.1
-pandas==2.2.3
-numpy==2.2.2
-pydantic==2.10.5
-python-multipart==0.0.20
+fastapi>=0.115
+uvicorn[standard]>=0.34
+aiosqlite>=0.20
+scikit-learn>=1.6
+pandas>=2.2
+numpy>=2.1
+pydantic>=2.10
+python-multipart>=0.0.20
