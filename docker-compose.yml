@@ -1,6 +1,15 @@
 version: "3.9"
 
 services:
+  seed:
+    build: ./backend
+    command: >
+      sh -c "cd /app/data && python seed.py && python train_models.py"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./backend:/app
+
   backend:
     build: ./backend
     ports:
@@ -8,6 +17,9 @@ services:
     volumes:
       - ./data:/app/data
       - ./models:/app/models
+    depends_on:
+      seed:
+        condition: service_completed_successfully
 
   frontend:
     build: ./frontend
