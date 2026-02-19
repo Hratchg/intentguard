@@ -66,14 +66,30 @@ Scroll down through the portfolio narrative sections: **Hero → Why → Scenari
 
 ## Quick Start
 
+### Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
+
+### Run the app
+
 ```bash
-docker-compose up
+docker compose up --build
 ```
 
-The demo ships with **50 synthetic users** and pre-trained models — no external data or GPU required.
+The first run will seed the database and train the models automatically. This may take a minute. Subsequent runs will be faster as the database is only seeded once.
 
 - Frontend: http://localhost:5173
 - Backend API: http://localhost:8000/docs
+
+The demo ships with **50 synthetic users** and pre-trained models — no external data or GPU required.
+
+### Stopping the app
+
+```bash
+docker compose down
+```
+
+> **Note:** If you need to reset the database (e.g. after a schema change), delete the `data/intentguard.db` file and run `docker compose up --build` again.
 
 ## Development Setup
 
@@ -82,7 +98,7 @@ The demo ships with **50 synthetic users** and pre-trained models — no externa
 ```bash
 cd backend
 python -m venv .venv
-source .venv/Scripts/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 

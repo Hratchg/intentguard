@@ -4,7 +4,10 @@ services:
   seed:
     build: ./backend
     command: >
-      sh -c "cd /app/data && python seed.py && python train_models.py"
+      sh -c "python /app/data/seed.py &&
+           python /app/data/train_models.py"
+
+
     volumes:
       - ./data:/app/data
       - ./models:/app/models

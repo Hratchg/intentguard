@@ -3,7 +3,7 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "backend"))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import aiosqlite
 from app.ml.features import extract_user_features
