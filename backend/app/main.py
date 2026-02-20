@@ -8,7 +8,7 @@ from app.api.users import router as users_router
 from app.api.insights import router as insights_router
 from app.api.stats import router as stats_router
 
-DB_PATH = str(Path(__file__).parent.parent.parent / "data" / "intentguard.db")
+DB_PATH = str(Path(__file__).parent.parent / "data" / "intentguard.db")
 
 
 @asynccontextmanager
